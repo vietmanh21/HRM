@@ -16,10 +16,12 @@ public class LoginController {
 
     private final EmployeeService employeeService;
     private final JwtService jwtService;
+    private final AuthenticationManager authenticationManager;
 
-    public LoginController(EmployeeService employeeService, JwtService jwtService) {
+    public LoginController(EmployeeService employeeService, JwtService jwtService, AuthenticationManager authenticationManager) {
         this.employeeService = employeeService;
         this.jwtService = jwtService;
+        this.authenticationManager = authenticationManager;
     }
 
     @PostMapping("/api/login")

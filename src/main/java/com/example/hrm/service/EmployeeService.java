@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,6 +41,7 @@ public class EmployeeService {
         }
         employee.setUsername(employeePostVm.getUsername());
         employee.setPassword(new BCryptPasswordEncoder().encode(employeePostVm.getPassword()));
+        employee.setCreatedAt(new Date(System.currentTimeMillis()));
         employee.setValidUtil(employeePostVm.getValidUtil());
         employee.setValid(true);
         return EmployeeGetVm.fromModel(employeeRepository.save(employee));

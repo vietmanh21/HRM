@@ -15,24 +15,23 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
-public class SecurityConfig {
-    private final UserDetailsService userDetailsService;
+@EnableWebSecurity
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final JwtFilter jwtFilter;
 
-    public SecurityConfig(UserDetailsService userDetailsService, JwtFilter jwtFilter) {
-        this.userDetailsService = userDetailsService;
+    public SecurityConfig(JwtFilter jwtFilter) {
         this.jwtFilter = jwtFilter;
     }
 
-    @Bean
-    public SecurityFilterChain config(HttpSecurity httpSecurity) throws Exception {
+    @Override
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeRequests()
                 .antMatchers("/api/manager/**").hasAnyAuthority("MANAGER")
                 .antMatchers("/api/login", "/api/resetPassword").permitAll()
                 .antMatchers("/api/**").authenticated()
-                .antMatchers("/**").permitAll()
                 .and()
                 .httpBasic()
                 .and()
@@ -40,8 +39,6 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         httpSecurity.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-
-        return httpSecurity.build();
     }
 
 
