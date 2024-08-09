@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "70390aaa-69a8-4e23-a64b-97dc3cee52a1",
+		"name": "HRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29098441",
+		"_collection_link": "https://planetary-water-320973.postman.co/workspace/Magic-Post~8ce2c58a-25f0-47a3-bbb7-00bad1df3758/collection/29098441-70390aaa-69a8-4e23-a64b-97dc3cee52a1?action=share&source=collection_link&creator=29098441"
+	},
+	"item": [
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Lan\",\n    \"password\": \"1234\",\n    \"validUtil\": \"19/8/2050\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2FuZ3BoYW0iLCJpYXQiOjE3MjMxODE3NDMsImV4cCI6MTcyMzI2ODE0M30.NLO5ED9wTWnLevLtPpYTgT6nyrupp9yfLtkD4ri2tS8tHxUokNDmKzTGs6O4V-OvNw5Bo_5QFEjBFYJAftmeww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/manager/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"manager",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2FuZ3BoYW0iLCJpYXQiOjE3MjMxODE3NDMsImV4cCI6MTcyMzI2ODE0M30.NLO5ED9wTWnLevLtPpYTgT6nyrupp9yfLtkD4ri2tS8tHxUokNDmKzTGs6O4V-OvNw5Bo_5QFEjBFYJAftmeww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2FuZ3BoYW0iLCJpYXQiOjE3MjMxNzA4MzYsImV4cCI6MTcyMzI1NzIzNn0.rHtJC_9HNOJjnvXgq6AmLmRdmIBcPlDnVT-qAu8-Xitc0nsVrNy6r37KvgetO_RmopGsDwidr0_giOuqZj4iew",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/manager/list-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"manager",
+						"list-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"khuephan\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2FuZ3BoYW0iLCJpYXQiOjE3MjMxODE3NDMsImV4cCI6MTcyMzI2ODE0M30.NLO5ED9wTWnLevLtPpYTgT6nyrupp9yfLtkD4ri2tS8tHxUokNDmKzTGs6O4V-OvNw5Bo_5QFEjBFYJAftmeww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"hoangpham\",\n    \"role\": [\"manager\"],\n    \"validUtil\": \"20/10/2025\",\n    \"password\": \"1234567\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/manager/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"manager",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "import file",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2FuZ3BoYW0iLCJpYXQiOjE3MjMxNzg0MjMsImV4cCI6MTcyMzI2NDgyM30.wS-W0zts7chHHrqEEMWIogEOMT_gkEVjh3Cw9pEQ1Q22eEsSUCVfN_qOkWMVM0cgnbP9yaGjiJ-XhNM3cgaGpg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/vietmanh21/Documents/Employees.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/import",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"import"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by username",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJob2FuZ3BoYW0iLCJpYXQiOjE3MjMxODE3NDMsImV4cCI6MTcyMzI2ODE0M30.NLO5ED9wTWnLevLtPpYTgT6nyrupp9yfLtkD4ri2tS8tHxUokNDmKzTGs6O4V-OvNw5Bo_5QFEjBFYJAftmeww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/manager/get-user?username=hoangpham1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"manager",
+						"get-user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "hoangpham1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
